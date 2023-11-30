@@ -1,9 +1,7 @@
 import { IFlashcard, INewFlashcard } from "../interfaces";
 import { addFlashcard, getFlashcards } from "../dataModel/flashcardModel";
-import { QueryClient, useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 import { wait } from "../tools";
-
-const queryClient = new QueryClient();
 
 export const PageFlashcards = () => {
 	const flashcardsQuery = useQuery<IFlashcard[]>({
@@ -14,14 +12,7 @@ export const PageFlashcards = () => {
 	const newFlashcardMutation = useMutation({
 		mutationFn: async (newFlashcard: INewFlashcard) => {
 			addFlashcard(newFlashcard);
-		},
-		onSuccess: async () => {
-			// TODO: fix it so invalidateQueries actulaly invalidates the queries 
-			await queryClient.invalidateQueries({
-				queryKey: ["flashcards"],
-				refetchType: 'active'
-			});
-		},
+		}
 	});
 
 	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
