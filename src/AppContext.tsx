@@ -10,6 +10,11 @@ interface IAppContext {
 	handleAddBlogItem: (e: React.FormEvent<HTMLFormElement>) => void;
 	handleDeleteBlogItem: (blogItem: IBlogItem) => void;
 	handleToggleBlogItemEditStatus: (blogItem: IBlogItem) => void;
+	handleBlogItemFieldChange: (
+		e: React.ChangeEvent<HTMLInputElement|HTMLTextAreaElement>,
+		fieldIdCode: string,
+		blogItem: IBlogItem
+	) => void;
 }
 
 interface IAppProvider {
@@ -61,7 +66,7 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 				if (response.status === 201) {
 					console.log("blog item added: " + blogItem.title);
 					const newBlogItem = response.data as IBlogItem;
-					newBlogItem.editingStatus = 'showing';
+					newBlogItem.editingStatus = "showing";
 					const _blogItems = structuredClone(blogItems);
 					_blogItems.push(newBlogItem);
 					setBlogItems(_blogItems);
@@ -111,6 +116,23 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 		setBlogItems(_blogItems);
 	};
 
+	const handleBlogItemFieldChange = (
+		e:React.ChangeEvent<HTMLInputElement|HTMLTextAreaElement>,
+		fieldIdCode: string,
+		blogItem: IBlogItem,
+	) => {
+		switch (fieldIdCode) {
+			case 'title':
+				blogItem.title = e.target.value;
+				break;
+			case 'body':
+				blogItem.body = e.target.value;
+				break;
+		}
+		const _blogItems = structuredClone(blogItems);
+		setBlogItems(_blogItems);
+	};
+
 	return (
 		<AppContext.Provider
 			value={{
@@ -118,6 +140,7 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 				handleAddBlogItem,
 				handleDeleteBlogItem,
 				handleToggleBlogItemEditStatus,
+				handleBlogItemFieldChange,
 			}}
 		>
 			{children}

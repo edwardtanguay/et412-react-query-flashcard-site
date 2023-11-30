@@ -10,6 +10,7 @@ export const PageBlog = () => {
 		handleAddBlogItem,
 		handleDeleteBlogItem,
 		handleToggleBlogItemEditStatus,
+		handleBlogItemFieldChange,
 	} = useContext(AppContext);
 
 	return (
@@ -92,6 +93,11 @@ export const PageBlog = () => {
 											id="title"
 											type="text"
 											value={blogItem.title}
+											onChange={(e) => handleBlogItemFieldChange(
+												e,
+												"title",
+												blogItem
+											)}
 										/>
 									</div>
 									<div className="mb-4 flex gap-2 items-center">
@@ -99,6 +105,11 @@ export const PageBlog = () => {
 											name="body"
 											className="w-full h-32"
 											value={blogItem.body}
+											onChange={(e) => handleBlogItemFieldChange(
+												e,
+												"body",
+												blogItem
+											)}
 										></textarea>
 									</div>
 									<div className="flex justify-end gap-3">
