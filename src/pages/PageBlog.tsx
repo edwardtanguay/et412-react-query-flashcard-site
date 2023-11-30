@@ -64,7 +64,39 @@ export const PageBlog = () => {
 								</>
 							)}
 							{blogItem.editingStatus === "editing" && (
-								<p>here is the form</p>
+								<form
+									onSubmit={handleAddBlogItem}
+									className="mt border p-4 rounded w-80 mb-4 pb-0"
+								>
+									<div className="mb-4 flex gap-2 items-center">
+										<label
+											htmlFor="title"
+											className="text-xl pb-1"
+										>
+											Title:
+										</label>
+										<input
+											className="w-full"
+											name="title"
+											id="title"
+											type="text"
+										/>
+									</div>
+									<div className="mb-4 flex gap-2 items-center">
+										<textarea
+											name="body"
+											className="w-full h-32"
+										></textarea>
+									</div>
+									<div className="flex justify-end gap-3">
+										<button className="mb-4">
+											Cancel
+										</button>
+										<button className="mb-4">
+											Save
+										</button>
+									</div>
+								</form>
 							)}
 						</div>
 					</React.Fragment>
