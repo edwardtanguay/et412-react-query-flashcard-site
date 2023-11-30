@@ -1,0 +1,6 @@
+- .. React Query
+- make a sticky (fixed) footer
+- new page: Blog
+	- with classic useEffect/useState (useContext)
+	- add "blogEntries" to json-server
+	- make add/edit/delete blog entries
