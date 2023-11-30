@@ -1,6 +1,9 @@
-- .. React Query
-- make a sticky (fixed) footer
-- new page: Blog
+- x React Query
+- .. Selman: show how to make screenrecording GIF
+	- windows: LICEcap: https://www.cockos.com/licecap
+	- Ubuntu: (built-in: Ctrl + Alt + Shift + R), https://beebom.com/how-record-screen-ubuntu
+- .. make a sticky (fixed) footer
+- new page: Blog (create CRUD)
 	- with classic useEffect/useState (useContext)
 	- add "blogEntries" to json-server
 	- make add/edit/delete blog entries

@@ -17,8 +17,10 @@ export const PageFlashcards = () => {
 		},
 		onSuccess: async () => {
 			// TODO: fix it so invalidateQueries actulaly invalidates the queries 
-			await queryClient.invalidateQueries({ queryKey: ["flashcards"] });
-			await queryClient.invalidateQueries({ queryKey: ["flashcards"] });
+			await queryClient.invalidateQueries({
+				queryKey: ["flashcards"],
+				refetchType: 'active'
+			});
 		},
 	});
 
