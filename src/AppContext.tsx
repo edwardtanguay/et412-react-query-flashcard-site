@@ -60,7 +60,8 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 
 				if (response.status === 201) {
 					console.log("blog item added: " + blogItem.title);
-					const newBlogItem = response.data;
+					const newBlogItem = response.data as IBlogItem;
+					newBlogItem.editingStatus = 'showing';
 					const _blogItems = structuredClone(blogItems);
 					_blogItems.push(newBlogItem);
 					setBlogItems(_blogItems);

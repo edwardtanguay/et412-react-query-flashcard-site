@@ -91,12 +91,14 @@ export const PageBlog = () => {
 											name="title"
 											id="title"
 											type="text"
+											value={blogItem.title}
 										/>
 									</div>
 									<div className="mb-4 flex gap-2 items-center">
 										<textarea
 											name="body"
 											className="w-full h-32"
+											value={blogItem.body}
 										></textarea>
 									</div>
 									<div className="flex justify-end gap-3">
