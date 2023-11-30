@@ -1,9 +1,12 @@
 import { useContext } from "react";
 import { AppContext } from "../AppContext";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import { FaPencil } from "react-icons/fa6";
+import React from "react";
 
 export const PageBlog = () => {
-	const { blogItems, handleAddBlogItem, handleDeleteBlogItem } = useContext(AppContext);
+	const { blogItems, handleAddBlogItem, handleDeleteBlogItem } =
+		useContext(AppContext);
 
 	return (
 		<>
@@ -11,7 +14,10 @@ export const PageBlog = () => {
 				There are {blogItems.length} blog entries.
 			</h2>
 
-			<form onSubmit={handleAddBlogItem} className="mt border p-4 rounded w-80 mb-4 pb-0">
+			<form
+				onSubmit={handleAddBlogItem}
+				className="mt border p-4 rounded w-80 mb-4 pb-0"
+			>
 				<div className="mb-4 flex gap-2 items-center">
 					<label htmlFor="title" className="text-xl pb-1">
 						Title:
@@ -33,17 +39,35 @@ export const PageBlog = () => {
 
 			{blogItems.map((blogItem) => {
 				return (
-					<div
-						key={blogItem.id}
-						className="bg-slate-600 p-4 mb-4 rounded"
-					>
-						<p className="text-gray-100 text-xl">
-							{blogItem.title}
-						</p>
-						<p className="text-yellow-300 mb-2">{blogItem.when}</p>
-						<p className="text-gray-200 mb-4">{blogItem.body}</p>
-						<RiDeleteBin6Line className="text-xl cursor-pointer" onClick={() => handleDeleteBlogItem(blogItem)} />
-					</div>
+					<React.Fragment key={blogItem.id}>
+						{blogItem.editingStatus === "showing" && (
+							<div
+								className="bg-slate-600 p-4 mb-4 rounded"
+							>
+								<p className="text-gray-100 text-xl">
+									{blogItem.title}
+								</p>
+								<p className="text-yellow-300 mb-2">
+									{blogItem.when}
+								</p>
+								<p className="text-gray-200 mb-4">
+									{blogItem.body}
+								</p>
+								<div className="flex gap-3">
+									<RiDeleteBin6Line
+										className="text-xl cursor-pointer"
+										onClick={() =>
+											handleDeleteBlogItem(blogItem)
+										}
+									/>
+									<FaPencil className="mt-[.1rem] cursor-pointer" />
+								</div>
+							</div>
+						)}
+						{blogItem.editingStatus === "editing" && (
+							<p>here is the form</p>
+						)}
+					</React.Fragment>
 				);
 			})}
 		</>

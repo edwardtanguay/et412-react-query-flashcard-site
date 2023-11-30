@@ -12,4 +12,5 @@ export interface IBlogItem {
 	when: string;
 	title: string;
 	body: string;
+	editingStatus: "showing" | "editing";
 }

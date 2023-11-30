@@ -21,5 +21,7 @@
 		- x make button works and show console log data
 		- x define blogItem object, post with axios
 		- x add to state variable blogItems (automatic update)
-	- .. make delete button
-	- make edit button
+	- x make delete button
+	- .. make edit button
+		- .. when pencil clicked, toggle form with data
+			- .. add property editState: 'showing' | 'editing'
