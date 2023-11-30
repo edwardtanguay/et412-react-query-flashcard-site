@@ -1,6 +1,9 @@
+import { useContext } from "react";
+import { AppContext } from "../AppContext";
+
 export const PageBlog = () => {
-	// const [blogItems, setBlogItems]
+	const { blogItems } = useContext(AppContext);
 	return (
-		<p>This is the blog page.</p>
+		<p>There are {blogItems.length} blog entries.</p>
 	)
 }

@@ -19,8 +19,9 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 
 	useEffect(() => {
 		(async () => {
-			const response = await axios.get(config.backendUrl);
+			const response = await axios.get(`${config.backendUrl}/blog-items`);
 			const _blogItems = response.data;
+			console.log('blogitesm', _blogItems);
 			setBlogItems(_blogItems);
 		})();
 	}, []);
