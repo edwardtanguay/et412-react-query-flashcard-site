@@ -9,6 +9,7 @@ interface IAppContext {
 	blogItems: IBlogItem[];
 	handleAddBlogItem: (e: React.FormEvent<HTMLFormElement>) => void;
 	handleDeleteBlogItem: (blogItem: IBlogItem) => void;
+	handleToggleBlogItemEditStatus: (blogItem: IBlogItem) => void;
 }
 
 interface IAppProvider {
@@ -23,9 +24,9 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 	useEffect(() => {
 		(async () => {
 			const response = await axios.get(`${config.backendUrl}/blog-items`);
-			const _blogItems:IBlogItem[] = response.data;
+			const _blogItems: IBlogItem[] = response.data;
 			for (const _blogItem of _blogItems) {
-				_blogItem.editingStatus = 'showing';
+				_blogItem.editingStatus = "showing";
 			}
 			setBlogItems(_blogItems);
 		})();
@@ -89,7 +90,9 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 				);
 
 				if (response.status === 200) {
-					const _blogItems = blogItems.filter(m => m.id !== blogItem.id);
+					const _blogItems = blogItems.filter(
+						(m) => m.id !== blogItem.id
+					);
 					setBlogItems(_blogItems);
 				} else {
 					console.log("error: status " + response.status);
@@ -100,12 +103,20 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 		})();
 	};
 
+	const handleToggleBlogItemEditStatus = (blogItem: IBlogItem) => {
+		blogItem.editingStatus =
+			blogItem.editingStatus === "editing" ? "showing" : "editing";
+		const _blogItems = structuredClone(blogItems);
+		setBlogItems(_blogItems);
+	};
+
 	return (
 		<AppContext.Provider
 			value={{
 				blogItems,
 				handleAddBlogItem,
 				handleDeleteBlogItem,
+				handleToggleBlogItemEditStatus,
 			}}
 		>
 			{children}

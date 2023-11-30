@@ -5,8 +5,12 @@ import { FaPencil } from "react-icons/fa6";
 import React from "react";
 
 export const PageBlog = () => {
-	const { blogItems, handleAddBlogItem, handleDeleteBlogItem } =
-		useContext(AppContext);
+	const {
+		blogItems,
+		handleAddBlogItem,
+		handleDeleteBlogItem,
+		handleToggleBlogItemEditStatus,
+	} = useContext(AppContext);
 
 	return (
 		<>
@@ -59,7 +63,14 @@ export const PageBlog = () => {
 												handleDeleteBlogItem(blogItem)
 											}
 										/>
-										<FaPencil className="mt-[.1rem] cursor-pointer" />
+										<FaPencil
+											onClick={() =>
+												handleToggleBlogItemEditStatus(
+													blogItem
+												)
+											}
+											className="mt-[.1rem] cursor-pointer"
+										/>
 									</div>
 								</>
 							)}
@@ -89,12 +100,17 @@ export const PageBlog = () => {
 										></textarea>
 									</div>
 									<div className="flex justify-end gap-3">
-										<button className="mb-4">
+										<button
+											className="mb-4"
+											onClick={() =>
+												handleToggleBlogItemEditStatus(
+													blogItem
+												)
+											}
+										>
 											Cancel
 										</button>
-										<button className="mb-4">
-											Save
-										</button>
+										<button className="mb-4">Save</button>
 									</div>
 								</form>
 							)}
