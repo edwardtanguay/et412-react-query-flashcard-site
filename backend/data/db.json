@@ -14,126 +14,20 @@
       "front": "the challenge",
       "back": "die Herausforderung",
       "id": 3
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
-    },
-    {
-      "front": "555",
-      "back": "666",
-      "id": 4
     }
+  ],
+  "blogItems": [
+	{
+		"id": 1,
+		"when": "2023-11-30 13:41:00",
+		"title": "Our first post",
+		"body": "This is our first blog entry."
+	},
+	{
+		"id": 2,
+		"when": "2023-11-30 13:43:00",
+		"title": "Our second post",
+		"body": "This is our second blog entry."
+	}
   ]
 }

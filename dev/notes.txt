@@ -4,8 +4,9 @@
 - x React Query
 - x make a sticky (fixed) footer
 - .. implement blog entry CRUD
-	- .. new page: "Blog"
-	- in db.json, add data:
+	- x new page: "Blog"
+	- .. in db.json, add data:
+	blogItem / blogItems
 	-----------------------------------------
 	{
 		"id": 999,
