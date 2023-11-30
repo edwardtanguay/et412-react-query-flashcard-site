@@ -1,6 +1,6 @@
 import App from "./App.tsx";
 import { PageWelcome } from "./pages/PageWelcome.tsx";
-import { PageAbout } from "./pages/PageAbout.tsx";
+import { PageBlog } from "./pages/PageBlog.tsx";
 import { Page404 } from "./pages/Page404.tsx";
 import { PageFlashcards } from "./pages/PageFlashcards.tsx";
 import { Navigate, createBrowserRouter } from "react-router-dom";
@@ -20,8 +20,8 @@ export const router = createBrowserRouter([
 				element: <PageFlashcards />,
 			},
 			{
-				path: "about",
-				element: <PageAbout />,
+				path: "blog",
+				element: <PageBlog />,
 			},
 			{
 				path: "/",

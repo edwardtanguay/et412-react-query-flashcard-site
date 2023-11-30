@@ -2,8 +2,19 @@
 	- windows: LICEcap: https://www.cockos.com/licecap
 	- Ubuntu: (built-in: Ctrl + Alt + Shift + R), https://beebom.com/how-record-screen-ubuntu
 - x React Query
-- .. make a sticky (fixed) footer
-- new page: Blog (create CRUD)
-	- with classic useEffect/useState (useContext)
-	- add "blogEntries" to json-server
-	- make add/edit/delete blog entries
+- x make a sticky (fixed) footer
+- .. implement blog entry CRUD
+	- .. new page: "Blog"
+	- in db.json, add data:
+	-----------------------------------------
+	{
+		"id": 999,
+		"when": "2023...",
+		"title": "ttt",
+		"body": "bbb"
+	}
+	-----------------------------------------
+	- show with classic useEffect/useState (useContext)
+	- create form to add blog entry
+	- make delete button
+	- make edit button

@@ -15,7 +15,7 @@ export const Footer = () => {
 						<NavLink to="/flashcards">Flashcards</NavLink>
 					</li>
 					<li>
-						<NavLink to="/about">About</NavLink>
+						<NavLink to="/blog">Blog</NavLink>
 					</li>
 				</ul>
 			</nav>

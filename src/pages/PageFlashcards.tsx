@@ -8,7 +8,7 @@ const queryClient = new QueryClient();
 export const PageFlashcards = () => {
 	const flashcardsQuery = useQuery<IFlashcard[]>({
 		queryKey: ["flashcards"],
-		queryFn: () => wait(2000).then(() => getFlashcards()),
+		queryFn: () => wait(0).then(() => getFlashcards()),
 	});
 
 	const newFlashcardMutation = useMutation({
