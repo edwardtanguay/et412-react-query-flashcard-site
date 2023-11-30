@@ -14,12 +14,19 @@ export const PageBlog = () => {
 					<label htmlFor="title" className="text-xl pb-1">
 						Title:
 					</label>
-					<input name="title" id="title" type="text" />
+					<input
+						className="w-full"
+						name="title"
+						id="title"
+						type="text"
+					/>
 				</div>
 				<div className="mb-4 flex gap-2 items-center">
 					<textarea className="w-full h-32"></textarea>
 				</div>
-				<button className="mb-4  ">Post Entry</button>
+				<div className="flex justify-end">
+					<button className="mb-4">Post Entry</button>
+				</div>
 			</form>
 
 			{blogItems.map((blogItem) => {
