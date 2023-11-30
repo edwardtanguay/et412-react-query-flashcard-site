@@ -14,6 +14,31 @@
       "front": "the challenge",
       "back": "die Herausforderung",
       "id": 3
+    },
+    {
+      "front": "the house",
+      "back": "das Haus",
+      "id": 4
+    },
+    {
+      "front": "the street",
+      "back": "die Strasse",
+      "id": 5
+    },
+    {
+      "front": "the kitchen",
+      "back": "die Küche",
+      "id": 6
+    },
+    {
+      "front": "sdf",
+      "back": "sdfd",
+      "id": 7
+    },
+    {
+      "front": "sdfsdf",
+      "back": "dfdf",
+      "id": 8
     }
   ]
 }
