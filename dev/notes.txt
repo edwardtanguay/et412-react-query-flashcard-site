@@ -5,17 +5,18 @@
 - x make a sticky (fixed) footer
 - .. implement blog entry CRUD
 	- x new page: "Blog"
-	- .. in db.json, add data:
-	blogItem / blogItems
-	-----------------------------------------
-	{
-		"id": 999,
-		"when": "2023...",
-		"title": "ttt",
-		"body": "bbb"
-	}
-	-----------------------------------------
-	- show with classic useEffect/useState (useContext)
+	- x in db.json, add data:
+		blogItem / blogItems
+		-----------------------------------------
+		{
+			"id": 999,
+			"when": "2023...",
+			"title": "ttt",
+			"body": "bbb"
+		}
+		-----------------------------------------
+	- .. set up useContext
+	- .. show with classic useEffect/useState (useContext)
 	- create form to add blog entry
 	- make delete button
 	- make edit button

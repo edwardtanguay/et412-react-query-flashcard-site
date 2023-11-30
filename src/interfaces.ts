@@ -6,3 +6,10 @@ export interface INewFlashcard {
 export interface IFlashcard extends INewFlashcard {
 	id: number;
 }
+
+export interface IBlogItem {
+	id: number;
+	when: string;
+	title: string;
+	body: string;
+}
