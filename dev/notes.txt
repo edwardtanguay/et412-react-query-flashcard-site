@@ -17,9 +17,9 @@
 		-----------------------------------------
 	- x set up useContext
 	- x show with classic useEffect/useState (useContext)
-	- .. create form to add blog entry
+	- x create form to add blog entry
 		- x make button works and show console log data
-		- .. define blogItem object, post with axios
-		- add to state variable blogItems (automatic update)
-	- make delete button
+		- x define blogItem object, post with axios
+		- x add to state variable blogItems (automatic update)
+	- .. make delete button
 	- make edit button

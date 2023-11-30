@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { AppContext } from "../AppContext";
+import { RiDeleteBin6Line } from "react-icons/ri";
 
 export const PageBlog = () => {
-	const { blogItems, handleAddBlogItem } = useContext(AppContext);
+	const { blogItems, handleAddBlogItem, handleDeleteBlogItem } = useContext(AppContext);
 
 	return (
 		<>
@@ -40,7 +41,8 @@ export const PageBlog = () => {
 							{blogItem.title}
 						</p>
 						<p className="text-yellow-300 mb-2">{blogItem.when}</p>
-						<p className="text-gray-200">{blogItem.body}</p>
+						<p className="text-gray-200 mb-4">{blogItem.body}</p>
+						<RiDeleteBin6Line className="text-xl cursor-pointer" onClick={() => handleDeleteBlogItem(blogItem)} />
 					</div>
 				);
 			})}

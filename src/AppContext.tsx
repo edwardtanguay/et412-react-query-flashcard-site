@@ -8,6 +8,7 @@ import * as tools from "./tools";
 interface IAppContext {
 	blogItems: IBlogItem[];
 	handleAddBlogItem: (e: React.FormEvent<HTMLFormElement>) => void;
+	handleDeleteBlogItem: (blogItem: IBlogItem) => void;
 }
 
 interface IAppProvider {
@@ -69,11 +70,39 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 		})();
 	};
 
+	const handleDeleteBlogItem = (blogItem: IBlogItem) => {
+		(async () => {
+			try {
+				const headers = {
+					"Access-Control-Allow-Origin": "*",
+					"Content-Type": "application/json",
+				};
+
+				const response = await axios.delete(
+					`${config.backendUrl}/blog-items/${blogItem.id}`,
+					{
+						headers,
+					}
+				);
+
+				if (response.status === 200) {
+					const _blogItems = blogItems.filter(m => m.id !== blogItem.id);
+					setBlogItems(_blogItems);
+				} else {
+					console.log("error: status " + response.status);
+				}
+			} catch (e) {
+				console.log("blog item add: error unknown");
+			}
+		})();
+	};
+
 	return (
 		<AppContext.Provider
 			value={{
 				blogItems,
 				handleAddBlogItem,
+				handleDeleteBlogItem,
 			}}
 		>
 			{children}
