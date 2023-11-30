@@ -6,12 +6,22 @@ import { wait } from "../tools";
 export const PageFlashcards = () => {
 	const flashcardsQuery = useQuery<IFlashcard[]>({
 		queryKey: ["flashcards"],
-		queryFn: () => wait(2000).then( () => getFlashcards()),
+		queryFn: () => wait(2000).then(() => getFlashcards()),
 	});
 
 	if (flashcardsQuery.isLoading) {
-		return <p>Loading...</p>
+		return <p>Loading...</p>;
 	}
+
+	// TODO: get this to work
+	// if (flashcardsQuery.isError) {
+	// 	return (
+	// 		<p>
+	// 			Sorry, we couldn't load the flashcards at this time. Please
+	// 			check back later.
+	// 		</p>
+	// 	);
+	// }
 
 	return (
 		<>
