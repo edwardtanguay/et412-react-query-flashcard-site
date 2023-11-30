@@ -2,14 +2,15 @@ import { useContext } from "react";
 import { AppContext } from "../AppContext";
 
 export const PageBlog = () => {
-	const { blogItems } = useContext(AppContext);
+	const { blogItems, handleAddBlogItem } = useContext(AppContext);
+
 	return (
 		<>
 			<h2 className="text-xl mb-4">
 				There are {blogItems.length} blog entries.
 			</h2>
 
-			<form className="mt border p-4 rounded w-80 mb-4 pb-0">
+			<form onSubmit={handleAddBlogItem} className="mt border p-4 rounded w-80 mb-4 pb-0">
 				<div className="mb-4 flex gap-2 items-center">
 					<label htmlFor="title" className="text-xl pb-1">
 						Title:
@@ -22,7 +23,7 @@ export const PageBlog = () => {
 					/>
 				</div>
 				<div className="mb-4 flex gap-2 items-center">
-					<textarea className="w-full h-32"></textarea>
+					<textarea name="body" className="w-full h-32"></textarea>
 				</div>
 				<div className="flex justify-end">
 					<button className="mb-4">Post Entry</button>

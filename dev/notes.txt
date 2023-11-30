@@ -15,8 +15,11 @@
 			"body": "bbb"
 		}
 		-----------------------------------------
-	- .. set up useContext
-	- .. show with classic useEffect/useState (useContext)
-	- create form to add blog entry
+	- x set up useContext
+	- x show with classic useEffect/useState (useContext)
+	- .. create form to add blog entry
+		- x make button works and show console log data
+		- .. define blogItem object, post with axios
+		- add to state variable blogItems (automatic update)
 	- make delete button
 	- make edit button

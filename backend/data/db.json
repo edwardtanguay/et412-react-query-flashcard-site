@@ -38,6 +38,18 @@
       "when": "2023-11-30 13:43:00",
       "title": "Our second post",
       "body": "This is our second blog entry."
+    },
+    {
+      "when": "2023-11-30 14:59:39",
+      "title": "Our third post",
+      "body": "This is #3.",
+      "id": 3
+    },
+    {
+      "when": "2023-11-30 15:09:32",
+      "title": "Our fourth post",
+      "body": "This is our 4th post.",
+      "id": 4
     }
   ]
 }
