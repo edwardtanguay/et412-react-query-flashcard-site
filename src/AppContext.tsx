@@ -25,7 +25,7 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 			const response = await axios.get(`${config.backendUrl}/blog-items`);
 			const _blogItems:IBlogItem[] = response.data;
 			for (const _blogItem of _blogItems) {
-				_blogItem.editingStatus = 'editing';
+				_blogItem.editingStatus = 'showing';
 			}
 			setBlogItems(_blogItems);
 		})();

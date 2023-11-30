@@ -40,33 +40,33 @@ export const PageBlog = () => {
 			{blogItems.map((blogItem) => {
 				return (
 					<React.Fragment key={blogItem.id}>
-						{blogItem.editingStatus === "showing" && (
-							<div
-								className="bg-slate-600 p-4 mb-4 rounded"
-							>
-								<p className="text-gray-100 text-xl">
-									{blogItem.title}
-								</p>
-								<p className="text-yellow-300 mb-2">
-									{blogItem.when}
-								</p>
-								<p className="text-gray-200 mb-4">
-									{blogItem.body}
-								</p>
-								<div className="flex gap-3">
-									<RiDeleteBin6Line
-										className="text-xl cursor-pointer"
-										onClick={() =>
-											handleDeleteBlogItem(blogItem)
-										}
-									/>
-									<FaPencil className="mt-[.1rem] cursor-pointer" />
-								</div>
-							</div>
-						)}
-						{blogItem.editingStatus === "editing" && (
-							<p>here is the form</p>
-						)}
+						<div className="bg-slate-600 p-4 mb-4 rounded">
+							{blogItem.editingStatus === "showing" && (
+								<>
+									<p className="text-gray-100 text-xl">
+										{blogItem.title}
+									</p>
+									<p className="text-yellow-300 mb-2">
+										{blogItem.when}
+									</p>
+									<p className="text-gray-200 mb-4">
+										{blogItem.body}
+									</p>
+									<div className="flex gap-3">
+										<RiDeleteBin6Line
+											className="text-xl cursor-pointer"
+											onClick={() =>
+												handleDeleteBlogItem(blogItem)
+											}
+										/>
+										<FaPencil className="mt-[.1rem] cursor-pointer" />
+									</div>
+								</>
+							)}
+							{blogItem.editingStatus === "editing" && (
+								<p>here is the form</p>
+							)}
+						</div>
 					</React.Fragment>
 				);
 			})}
